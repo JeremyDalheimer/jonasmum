@@ -1,6 +1,8 @@
-Name:Jonas Mutter
-by:Jeremy
-desc:Jonas übermäßg fette Mutter
+Let's make a game!
+
+Name:Absurd Clicker
+by:Claude
+desc:Ein völlig absurdes Clicker-Spiel mit fragwürdigem Geschmack
 created:11/6/2025
 updated:11/6/2025
 version:1
