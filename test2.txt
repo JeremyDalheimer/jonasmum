@@ -1,0 +1,79 @@
+Let's make a game!
+
+Name:Speck Clicker
+by:Claude
+desc:Ein absurdes Speck-Clicker Spiel
+version:1
+
+Settings
+building cost increase:115%
+
+Resources
+*speck
+name:Speck
+desc:Fettiges Speck zum Sammeln
+icon:cookie
+
+Buildings
+*klatscher
+name:Klatsch-Hand
+desc:Klatscht automatisch für dich. Produziert 1 Speck pro Sekunde.
+cost:15 speck
+on tick:yield 1 speck
+icon:cursor
+
+*ventilator  
+name:Stink-Ventilator
+desc:Verbreitet den Geruch. Produziert 5 Speck pro Sekunde.
+cost:100 speck
+on tick:yield 5 speck
+icon:factory
+
+*fabrik
+name:Speck-Fabrik  
+desc:Industrielle Produktion. Produziert 25 Speck pro Sekunde.
+cost:1000 speck
+on tick:yield 25 speck
+icon:mine
+
+*labor
+name:Ekel-Labor
+desc:Wissenschaftliche Forschung. Produziert 100 Speck pro Sekunde.
+cost:10000 speck  
+on tick:yield 100 speck
+icon:lab
+
+Upgrades
+*upgrade1
+name:Klebrige Finger
+desc:Klicks geben doppelt so viel Speck!
+cost:100 speck
+passive:multiply yield of speck by 2
+icon:upgrade
+
+*upgrade2  
+name:Turbo-Klatsch
+desc:Klatsch-Hände arbeiten doppelt so schnell!
+cost:1000 speck
+passive:multiply power of klatscher by 2
+req:10 klatscher
+icon:upgrade
+
+Achievements
+*ach1
+name:Erster Klick
+desc:Du hast zum ersten Mal geklickt!
+req:1 speck:earned
+icon:star
+
+*ach2
+name:Speck-Sammler  
+desc:Du hast 100 Speck gesammelt!
+req:100 speck:earned
+icon:cookie
+
+*ach3
+name:Fabrik-Besitzer
+desc:Du besitzt 10 Gebäude!
+req:10 buildings  
+icon:factory
