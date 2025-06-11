@@ -1,0 +1,184 @@
+Name:Jonas Mutter
+by:Jeremy
+desc:Jonas übermäßg fette Mutter
+created:11/6/2025
+updated:11/6/2025
+version:1
+
+Settings
+	background:https://i.imgur.com/5bZqn8L.png
+	building cost increase:115%
+	building cost refund:50%
+	spritesheet:icons
+	stylesheet:bigBlue
+
+Layout
+	use default
+
+Buttons
+	*MAIN
+		name:Hauptmenü
+		desc:Das Hauptmenü des Spiels
+		on click:toggle menu
+		class:bigButton hasFlares
+		icon:menu
+
+Resources
+	*speck
+		name:Speck
+		desc:Fettiges, glänzendes Speck
+		earn rate:1
+		max:infinity
+		class:bigResource
+
+	*ekel
+		name:Ekel-Punkte  
+		desc:Je mehr desto schlimmer
+		earn rate:0
+		max:infinity
+		class:bigResource
+
+Buildings
+	*klatscher
+		name:Klatsch-Hand
+		desc:Klatscht automatisch für dich|Produziert <b>1</b> Speck pro Sekunde
+		cost:15 speck
+		on tick:yield 1 speck
+		req:15 speck:earned
+		class:building
+		icon:cursor
+
+	*ventilator
+		name:Stink-Ventilator
+		desc:Verbreitet den Geruch effizienter|Produziert <b>5</b> Speck pro Sekunde
+		cost:100 speck
+		on tick:yield 5 speck
+		req:100 speck:earned
+		class:building
+		icon:factory
+
+	*fabrik
+		name:Speck-Fabrik
+		desc:Industrielle Speck-Produktion|Produziert <b>25</b> Speck pro Sekunde
+		cost:1000 speck
+		on tick:yield 25 speck
+		req:1000 speck:earned
+		class:building
+		icon:mine
+
+	*labor
+		name:Ekel-Labor
+		desc:Wissenschaftliche Ekel-Forschung|Produziert <b>100</b> Speck pro Sekunde
+		cost:10000 speck
+		on tick:yield 100 speck
+		req:10000 speck:earned
+		class:building
+		icon:lab
+
+	*portal
+		name:Dimension des Grauens
+		desc:Öffnet ein Portal zu noch ekelhafteren Welten|Produziert <b>500</b> Speck pro Sekunde
+		cost:100000 speck
+		on tick:yield 500 speck
+		req:100000 speck:earned
+		class:building
+		icon:temple
+
+	*universum
+		name:Ekel-Universum
+		desc:Ein ganzes Universum voller Absurdität|Produziert <b>2000</b> Speck pro Sekunde
+		cost:1000000 speck
+		on tick:yield 2000 speck
+		req:1000000 speck:earned
+		class:building
+		icon:spaceship
+
+Upgrades
+	*upgrade1
+		name:Klebrige Finger
+		desc:Deine Klicks produzieren <b>doppelt</b> so viel Speck!
+		cost:100 speck
+		passive:multiply yield of speck by 2
+		req:100 speck:earned
+		class:upgrade
+		icon:upgrade
+
+	*upgrade2
+		name:Turbo-Klatsch
+		desc:Klatsch-Hände sind <b>doppelt</b> so effektiv!
+		cost:1000 speck, 10 klatscher
+		passive:multiply power of klatscher by 2
+		req:10 klatscher
+		class:upgrade
+		icon:upgrade
+
+	*upgrade3
+		name:Super-Ventilator
+		desc:Ventilatoren sind <b>doppelt</b> so stark!
+		cost:5000 speck, 10 ventilator
+		passive:multiply power of ventilator by 2
+		req:10 ventilator
+		class:upgrade
+		icon:upgrade
+
+	*upgrade4
+		name:Mega-Fabrik
+		desc:Fabriken produzieren <b>doppelt</b> so viel!
+		cost:50000 speck, 10 fabrik
+		passive:multiply power of fabrik by 2
+		req:10 fabrik
+		class:upgrade
+		icon:upgrade
+
+	*golden
+		name:Goldenes Speck-Stück
+		desc:Ein seltenes, glänzendes Speck-Stück erscheint!|Klicke schnell für Bonus-Speck!
+		cost:0
+		on click:yield 77 speck
+		duration:10
+		frequency:300
+		class:goldenCookie
+		icon:star
+
+Achievements
+	*ach1
+		name:Erster Klick
+		desc:Du hast zum ersten Mal geklickt. Glückwunsch!
+		req:1 speck:earned
+		class:achievement
+		icon:star
+
+	*ach2
+		name:Speck-Sammler
+		desc:Du hast 100 Speck gesammelt!
+		req:100 speck:earned
+		class:achievement
+		icon:cookie
+
+	*ach3
+		name:Kleine Fabrik
+		desc:Du besitzt 10 Gebäude!
+		req:10 buildings
+		class:achievement
+		icon:factory
+
+	*ach4
+		name:Speck-Millionär
+		desc:Du hast 1 Million Speck gesammelt!
+		req:1000000 speck:earned
+		class:achievement
+		icon:diamond
+
+	*ach5
+		name:Fleißiger Klicker
+		desc:Du hast 1000 mal geklickt!
+		req:1000 clicks
+		class:achievement
+		icon:cursor
+
+	*ach6
+		name:Ekel-Meister
+		desc:Du besitzt alle Gebäude-Typen!
+		req:1 klatscher, 1 ventilator, 1 fabrik, 1 labor, 1 portal, 1 universum
+		class:achievement
+		icon:crown
